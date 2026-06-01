@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 bat 'npm install'
@@ -21,7 +15,7 @@ pipeline {
             }
         }
 
-        stage('Node Version Check') {
+        stage('Check Node Version') {
             steps {
                 bat 'node --version'
             }
