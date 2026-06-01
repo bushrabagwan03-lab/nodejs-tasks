@@ -11,6 +11,9 @@ const server = http.createServer((req, res) => {
     res.end();
 });
 
+// Heroku-compatible port
+const PORT = process.env.PORT || 3000;
+
 // Server listen on port 3000
 server.listen(3000, () => {
     console.log("Server is running on http://localhost:3000");
