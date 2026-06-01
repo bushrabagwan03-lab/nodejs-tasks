@@ -3,19 +3,13 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                git 'https://github.com/bushrabagwan03-lab/node-ci-cd-project.git'
-            }
-        }
-
-        stage('Install') {
+        stage('Install Dependencies') {
             steps {
                 bat 'npm install'
             }
         }
 
-        stage('Test') {
+        stage('Run Tests') {
             steps {
                 bat 'npm test'
             }
